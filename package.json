@@ -1,0 +1,7 @@
+{
+  "name": "nlw5-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MayconEduardo/nlw5-nodejs.git",
+  "license": "MIT"
+}
