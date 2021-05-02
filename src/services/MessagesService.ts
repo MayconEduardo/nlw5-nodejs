@@ -22,3 +22,5 @@ class MessagesService {
         return message
     }
 }
+
+export { MessagesService }
