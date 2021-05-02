@@ -9,17 +9,27 @@ interface IMessageCreate {
 
 class MessagesService {
     async create({ admin_id, user_id, text }: IMessageCreate) {
-        const messageRepository = getCustomRepository(MessagesRepository)
+        const messagesRepository = getCustomRepository(MessagesRepository)
 
-        const message = messageRepository.create({
+        const message = messagesRepository.create({
             admin_id,
             user_id,
             text
         })
 
-        await messageRepository.save(message)
+        await messagesRepository.save(message)
 
         return message
+    }
+
+    async listByUser(user_id: string) {
+        const messagesRepository = getCustomRepository(MessagesRepository)
+
+        const list = await messagesRepository.find({
+            user_id
+        })
+
+        return list
     }
 }
 
